@@ -5,6 +5,9 @@ using namespace std;
 
 void inputMas(int *, char *, int, int);
 void outputMas(int *, int);
+void max(int *, int);
+void min(int *, int);
+
 
 int main()
 {
@@ -21,7 +24,8 @@ int main()
 
 	inputMas(number, str, n, length);
 	outputMas(number, n);
-
+	max(number, n);
+	min(number, n);
 	system("pause");
 		return 0;
 }
@@ -43,7 +47,26 @@ void outputMas(int *mas, int length)
 			}
 		}
 	cout << "----------------------------------" << endl;
+}
 
-	
+void max(int *mas, int length)
+{
+	int max_el = mas[0];
+	int num_max = 0;
+	for (int i = 0; i < length; i++)
+		if (mas[i] > max_el) { max_el = mas[i]; num_max = i; }
+	cout << "MAX:" << max_el << "  " << (char)num_max << endl;
+}
+
+
+void min(int *mas, int length)
+{
+	int min_el = mas[0];
+	int num_min = 0;
+	for (int i = 0; i < length; i++)
+		if (mas[i] != 0){
+			if (mas[i] < min_el) { min_el = mas[i]; num_min = i; }
+		}
+	cout << "MIN:" << min_el << "  " << (char)num_min << endl;
 }
 
