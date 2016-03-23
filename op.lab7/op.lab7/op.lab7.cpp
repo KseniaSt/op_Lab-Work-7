@@ -54,15 +54,21 @@ void max(int *mas, int length)
 	int max_el = mas[0];
 	int num_max = 0;
 	for (int i = 0; i < length; i++)
-		if (mas[i] > max_el) { max_el = mas[i]; num_max = i; }
+		if (mas[i] != 0){
+			if (mas[i] > max_el) { max_el = mas[i]; num_max = i; }
+		}
 	cout << "MAX:" << max_el << "  " << (char)num_max << endl;
 }
 
 
 void min(int *mas, int length)
 {
-	int min_el = mas[0];
-	int num_min = 0;
+	int min_el;
+	int num_min;
+	for (int i = 0; i < length; i++)
+		if (mas[i] != 0){
+			min_el = mas[i]; num_min = i; break;
+}
 	for (int i = 0; i < length; i++)
 		if (mas[i] != 0){
 			if (mas[i] < min_el) { min_el = mas[i]; num_min = i; }
